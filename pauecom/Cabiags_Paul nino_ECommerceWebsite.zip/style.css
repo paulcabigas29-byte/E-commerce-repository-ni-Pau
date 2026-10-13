@@ -1,0 +1,255 @@
+/* --- General Reset & Smooth Scroll Magic --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- Fixed Top Lumulutang na Menu Container --- */
+.floating-header {
+    position: fixed;
+    top: 30px; /* Nilayo ng kaunti sa pinakataas para maging elegante ang paglutang */
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* Iniiwasan nitong harangan ang mga elements sa ilalim nito */
+}
+
+/* Lalagyan ng mga Buttons sa Taas */
+.top-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    pointer-events: auto; /* Pinapagana muli ang click events para sa buttons */
+}
+
+/* Ang Estilo ng mga Bilugang Buttons */
+.hero-btn {
+    background-color: #ffffff;
+    border: 2px solid #b0e0e6;
+    border-radius: 50px;
+    color: #2c3e50;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hero-btn:hover {
+    background-color: #b0e0e6;
+    color: #2c3e50;
+}
+
+.hero-btn.active {
+    background-color: #0288d1;
+    border-color: #0288d1;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(2, 136, 209, 0.3);
+}
+
+/* --- Full Screen Slides Layout --- */
+main {
+    width: 100vw;
+}
+
+.slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 120px 50px 60px 50px; /* Binigyan ng sapat na espasyo sa taas para hindi matakpan ng lumulutang na buttons */
+    background-color: #e1f5fe;
+}
+
+/* The Styled Inner Box Architecture */
+.inner-box-accent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7fa;
+    border: 15px solid #b0e0e6;
+    border-radius: 30px;
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+/* --- Content Typography & Tags --- */
+.hero-collection-tag {
+    background-color: #ffffff;
+    border: 2px solid #b0e0e6;
+    border-radius: 50px;
+    color: #2c3e50;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding: 8px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.hero-title, .section-title {
+    color: #2c3e50;
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 52px;
+    margin-bottom: 40px;
+}
+
+.hero-description {
+    color: #546e7a;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- Showcase Product Grid System --- */
+.grid-container {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.item-card {
+    background-color: #ffffff;
+    border: 2px solid #b0e0e6;
+    border-radius: 15px;
+    padding: 16px;
+    text-align: left;
+}
+
+/* Lagayan ng Image */
+figure.item-image-placeholder {
+    height: 240px;
+    background-color: #e8ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 0 0 15px 0;
+    border: 1px dashed #b0e0e6;
+    overflow: hidden;
+}
+
+/* Size handling para sa Product Image */
+figure.item-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+}
+
+.item-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.price {
+    color: #0288d1;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* --- Clean Form Structure --- */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border-bottom: 2px dashed #b0e0e6;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #b0e0e6;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #0288d1;
+}
+
+.submit-btn {
+    background-color: #0288d1;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #2c3e50;
+}
